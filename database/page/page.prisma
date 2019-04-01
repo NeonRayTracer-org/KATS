@@ -1,0 +1,6 @@
+type Page {
+  title: String!
+  excerpt: String!
+  description: Json!
+  image: String
+}

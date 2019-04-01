@@ -1,0 +1,82 @@
+type Post @db(name: "post") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  author: User! @relation(link: INLINE, name: "PostAuthor")
+
+  slug: String! @unique
+  isPublished: Boolean! @default(value: false)
+
+  imageSrc: String!
+  contents: [PostContent!]! @relation(link: TABLE, onDelete: CASCADE)
+  tags: [PostTag!]! @relation(link: TABLE, name: "PostTags")
+
+  comments: [Comment!]! @relation(name: "CommentToPost")
+
+  likes: Int @default(value: 0)
+  likedBy: [User!] @relation(link: TABLE, name: "UserPostLikes")
+}
+
+type PostContent @db(name: "post_content") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  language: PostLng! @relation(link: INLINE, name: "PostLng") @unique
+
+  title: String!
+  text: String!
+
+  metaTitle: String
+  metaDescription: String
+
+  imageAlt: String!
+
+  post: Post!
+}
+
+type PostLng @db(name: "post_lng") {
+  id: UUID! @id
+  posts: [PostContent!]! @relation(name: "PostLng")
+
+  country: String! @unique
+  locale: String @unique
+}
+
+type Comment @db(name: "post_comment") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  author: User! @relation(link: INLINE, name: "CommentAuthor")
+
+  post: Post! @relation(link: INLINE, name: "CommentToPost")
+}
+
+type PostTag {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  color: String!
+
+  language: PostTagLng! @relation(link: INLINE, name: "PostTagLng") @unique
+  contents: PostTagContent! @relation(link: TABLE, onDelete: CASCADE)
+}
+
+type PostTagContent {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  tag: PostTag!
+
+  title: String!
+}
+
+type PostTagLng {
+  id: UUID! @id
+  tags: [PostTag!]! @relation(name: "PostTagLng")
+
+  country: String!
+  locale: String!
+}

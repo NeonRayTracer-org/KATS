@@ -1,0 +1,41 @@
+type ProjectAlbum {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  project: Project!
+  images: [ProjectImage!]! @relation(link: TABLE, onDelete: CASCADE)
+}
+
+type ProjectImage {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  album: ProjectAlbum!
+
+  publicId: String!
+  src: String!
+
+  contents: ProjectImageContent! @relation(link: TABLE, onDelete: CASCADE)
+}
+
+type ProjectImageContent {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  image: ProjectImage!
+
+  language: ProjectImageLng! @relation(name: "ImageLng")
+
+  alt: String!
+}
+
+type ProjectImageLng {
+  id: UUID! @id
+  images: [ProjectImageContent!]! @relation(name: "ImageLng")
+
+  country: String! @unique
+  locale: String @unique
+}

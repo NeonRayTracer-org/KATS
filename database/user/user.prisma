@@ -1,0 +1,36 @@
+type User @db(name: "user") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  name: String!
+  email: String @unique
+  password: String!
+
+  role: Role! @default(value: USER)
+  profile: Profile @relation(link: INLINE)
+
+  posts: [Post!] @relation(name: "PostAuthor")
+  postLikes: [Post!] @relation(name: "UserPostLikes")
+  projects: [Project!] @relation(name: "ProjectAuthor")
+  comments: [Comment!] @relation(name: "CommentAuthor")
+}
+
+type Profile @db(name: "profile") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  user: User!
+  bio: String!
+  avatar: Avatar! @relation(link: INLINE, name: "ProfileAvatar")
+}
+
+type Avatar @db(name: "profile_avatar") {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  publicId: String
+  src: String
+}

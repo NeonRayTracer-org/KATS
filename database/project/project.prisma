@@ -1,0 +1,70 @@
+type Project {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  slug: String! @unique
+
+  category: ProjectCategory! @relation(name: "ProjectCategory")
+  author: User! @relation(link: INLINE, name: "ProjectAuthor")
+
+  album: ProjectAlbum! @relation(link: INLINE)
+  contents: [ProjectContent!]! @relation(link: TABLE, onDelete: CASCADE)
+  tags: [ProjectTag!]! @relation(link: TABLE, name: "ProjectTags")
+}
+
+type ProjectContent {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  project: Project!
+  language: ProjectLng! @relation(link: INLINE, name: "ProjectLng")
+
+  title: String!
+  text: String!
+
+  metaTitle: String
+  metaDescription: String
+
+  isActive: Boolean! @default(value: false)
+}
+
+type ProjectLng {
+  id: UUID! @id
+  projects: [ProjectContent!]! @relation(name: "ProjectLng")
+
+  country: String! @unique
+  locale: String @unique
+}
+
+type ProjectTag {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  language: ProjectTagLng!
+    @relation(link: INLINE, name: "ProjectTagLng")
+    @unique
+  contents: ProjectTagContent! @relation(link: TABLE, onDelete: CASCADE)
+
+  title: String!
+  color: String
+}
+
+type ProjectTagContent {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  tag: ProjectTag!
+
+  title: String
+}
+
+type ProjectTagLng {
+  id: UUID! @id
+  tags: [ProjectTag!]! @relation(name: "ProjectTagLng")
+
+  country: String!
+  locale: String!
+}

@@ -1,0 +1,40 @@
+type ProjectCategory {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  contents: [ProjectCategoryContent!]!
+    @relation(name: "ProjectCategoryContents", onDelete: CASCADE)
+  slug: String! @unique
+
+  image: String!
+
+  projects: [Project!]! @relation(link: TABLE, name: "ProjectCategory")
+}
+
+type ProjectCategoryContent {
+  id: UUID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+
+  category: ProjectCategory!
+    @relation(name: "ProjectCategoryContents", onDelete: CASCADE)
+
+  language: ProjectCategoryLng!
+    @relation(link: INLINE, name: "ProjectCategoryLng")
+    @unique
+
+  title: String!
+  text: String!
+  imageAlt: String!
+  metaTitle: String
+  metaDescription: String
+}
+
+type ProjectCategoryLng {
+  id: UUID! @id
+  categories: [ProjectCategoryContent!]! @relation(name: "ProjectCategoryLng")
+
+  country: String! @unique
+  locale: String @unique
+}
