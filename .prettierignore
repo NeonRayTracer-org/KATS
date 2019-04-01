@@ -1,0 +1,4 @@
+docker-compose.yml
+
+dist/index.js
+generated/**/*

@@ -1,0 +1,22 @@
+endpoint: http://localhost:4466/default/default
+
+secret: ${env:APP_SECRET}
+
+datamodel:
+  - database/enums.prisma
+  - database/post/post.prisma
+  - database/user/user.prisma
+  - database/project/project.prisma
+  - database/project/projectCategory.prisma
+  - database/project/album.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client
+  - generator: graphql-schema
+    output: ./generated/prisma-schema.graphql
+
+hooks:
+  post-deploy:
+    - prisma generate
+    - nexus-prisma-generate --client ./generated/prisma-client --output ./generated/nexus-prisma
