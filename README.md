@@ -2,6 +2,15 @@
 
 > Kandelborg API TS Starter aka KATS
 
+[![CircleCI](https://circleci.com/gh/Kandelborg/KATS.svg?style=svg)](https://circleci.com/gh/Kandelborg/KATS)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/01bf6e04bbf36384644f/maintainability)](https://codeclimate.com/github/Kandelborg/KATS/maintainability)
+
+[![License: MIT](https://img.shields.io/github/license/MathiasKandelborg/next-apollo-mui-starter.svg)](https://github.com/Kandelborg/next-apollo-mui-starter/blob/master/LICENSE)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-blue.svg)](http://commitizen.github.io/cz-cli/)
+
 This project will get you running with a GraphQL API in less than 10 minutes!
 
 Did you ever think making a complete API server with authentication, pagination, filtering, rules, image upload, amazing speed, etc. etc. was bothersome?
@@ -37,7 +46,7 @@ Authentication is integrated with JWT and all models are ready for i18n.
 - **Working knowledge of GraphQL**
 - **Basic understanding of git and npm (installing & running scripts)**
 
-  ***
+---
 
 This project follows some conventions currently not standard in Prisma, read more about them in the [conventions section](#conventions)
 
