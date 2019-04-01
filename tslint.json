@@ -7,7 +7,7 @@
     "tslint-config-airbnb",
     "tslint-config-prettier"
   ],
-  "linterOptions": { "exclude": ["generated"] },
+  "linterOptions": { "exclude": ["generated/**/*"] },
   "jsRules": {},
   "rules": {
     "quotemark": false,
