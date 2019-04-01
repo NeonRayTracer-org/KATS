@@ -1,7 +1,13 @@
 {
-  "name": "kandelborg-api-starter",
-  "version": "1.0.0",
-  "description": "",
+  "name": "kats",
+  "version": "0.0.0-development",
+  "description": "Kandelborg API TypeScript Starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kandelborg/KATS.git"
+  },
+  "author": "Mathias Kandelborg",
+  "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -12,10 +18,10 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpileOnly -r dotenv/config  ./src/index.ts",
     "generate": "APP_SECRET=secret prisma generate; nexus-prisma-generate --client ./generated/prisma-client --output generated/nexus-prisma",
     "start:dev": "pm2 start --watch",
-    "start:prod": "pm2 start --env production"
+    "start:prod": "pm2 start --env production",
+    "semantic-release": "semantic-release",
+    "lint": "tslint -p tsconfig.json --config tslint.json && prettier-tslint fix \"src/**/*.ts*\""
   },
-  "author": "Mathias Kandelborg",
-  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.4.0",
@@ -45,7 +51,7 @@
     "prettier": "1.16.4",
     "prettier-tslint": "0.4.2",
     "rimraf": "2.6.3",
-    "semantic-release": "15.13.3",
+    "semantic-release": "^15.13.3",
     "terser-webpack-plugin": "1.2.3",
     "ts-loader": "5.3.3",
     "ts-node": "8.0.3",
