@@ -254,7 +254,7 @@ A more comprehensive deployment strategy will be automated; options and informat
 Instead of using the default naming schema for mutations defined as `TYPE+ACTION`, KATS uses a more convenient naming method: `ACTION+TYPE`.
 In practice it looks like this:
 
-```gql
+```graphql
 # Prisma method:
 type CreatePost
 type UpdatePost
