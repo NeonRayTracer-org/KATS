@@ -1,6 +1,6 @@
 {
   "name": "kats",
-  "version": "0.0.0-development",
+  "version": "1.0.1",
   "description": "Kandelborg API TypeScript Starter",
   "repository": {
     "type": "git",

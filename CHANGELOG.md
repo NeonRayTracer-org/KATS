@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/Kandelborg/KATS/compare/v1.0.0...v1.0.1) (2019-04-05)
+
+
+### Bug Fixes
+
+* **process.env:** env vars can only be string, split string on , ([1c52f56](https://github.com/Kandelborg/KATS/commit/1c52f56))
+* **resolvers:** fix nullable setting on resolvers ([5fae15a](https://github.com/Kandelborg/KATS/commit/5fae15a))
+
 # 1.0.0 (2019-04-01)
 
 
