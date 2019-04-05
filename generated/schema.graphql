@@ -297,7 +297,7 @@ type Mutation {
   ): Project
   userCreate(email: String!, name: String!, password: String!): AuthPayload
   userDelete(where: UserWhereUniqueInput!): User
-  userLogin(email: String!, password: String!): AuthPayload
+  userLogin(email: String!, password: String!): AuthPayload!
   userUpdate(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
 }
 
@@ -3717,7 +3717,7 @@ type Query {
     last: Int
     orderBy: ProjectCategoryOrderByInput
     skip: Int
-  ): [ProjectCategory!]
+  ): [ProjectCategory!]!
   projectCategory(where: ProjectCategoryWhereUniqueInput!): ProjectCategory
   projectCategoryById(id: ID!): ProjectCategory
   projectCategoryBySlug(slug: String!): ProjectCategory

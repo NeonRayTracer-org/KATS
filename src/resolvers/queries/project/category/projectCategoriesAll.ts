@@ -13,7 +13,7 @@ export const projectCategoriesAll = extendType({
         skip: intArg({ required: false })
       },
       list: true,
-      nullable: true,
+      nullable: false,
       resolve: async (_, args, ctx: Context) =>
         ctx.prisma.projectCategories({
           after: args.after ? args.after : undefined,

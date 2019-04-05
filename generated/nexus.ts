@@ -4314,7 +4314,7 @@ export interface NexusGenFieldTypes {
     projectUpdate: NexusGenRootTypes['Project'] | null // Project
     userCreate: NexusGenRootTypes['AuthPayload'] | null // AuthPayload
     userDelete: NexusGenRootTypes['User'] | null // User
-    userLogin: NexusGenRootTypes['AuthPayload'] | null // AuthPayload
+    userLogin: NexusGenRootTypes['AuthPayload'] // AuthPayload!
     userUpdate: NexusGenRootTypes['User'] | null // User
   }
   Post: {
@@ -4520,7 +4520,7 @@ export interface NexusGenFieldTypes {
     projectById: NexusGenRootTypes['Project'] | null // Project
     projectBySlug: NexusGenRootTypes['Project'] | null // Project
     projectCategories: NexusGenRootTypes['ProjectCategory'][] // [ProjectCategory!]!
-    projectCategoriesAll: NexusGenRootTypes['ProjectCategory'][] | null // [ProjectCategory!]
+    projectCategoriesAll: NexusGenRootTypes['ProjectCategory'][] // [ProjectCategory!]!
     projectCategory: NexusGenRootTypes['ProjectCategory'] | null // ProjectCategory
     projectCategoryById: NexusGenRootTypes['ProjectCategory'] | null // ProjectCategory
     projectCategoryBySlug: NexusGenRootTypes['ProjectCategory'] | null // ProjectCategory

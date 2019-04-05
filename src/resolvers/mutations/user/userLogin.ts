@@ -7,7 +7,7 @@ export const userLogin = extendType({
   definition: (t) => {
     t.field('userLogin', {
       args: { email: stringArg(), password: stringArg() },
-      nullable: true,
+      nullable: false,
       resolve: async (_, { email, password }, ctx: Context) => {
         const user = await ctx.prisma.user({ email })
 
