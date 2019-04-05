@@ -67,7 +67,7 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "4.0.0",
     "tslint-react-a11y": "1.0.0",
-    "typescript": "3.4.1",
+    "typescript": "3.4.2",
     "webpack": "4.29.6",
     "webpack-cli": "3.3.0",
     "webpack-node-externals": "1.7.2"
