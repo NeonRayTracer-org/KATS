@@ -38,7 +38,10 @@ import '@util/generateSignature'
 server
   .start(
     {
-      cors: { origin: ALLOWED_DOMAINS, credentials: true },
+      cors: {
+        credentials: true,
+        origin: ALLOWED_DOMAINS.split(',')
+      },
       tracing: true
     },
     () =>

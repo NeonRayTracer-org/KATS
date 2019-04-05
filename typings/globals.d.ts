@@ -10,7 +10,7 @@ namespace NodeJS {
     env: ProcessEnv
   }
   interface ProcessEnv {
-    ALLOWED_DOMAINS: string[]
+    ALLOWED_DOMAINS: string
     APP_SECRET: string
     CLOUDINARY_API_KEY: string
     CLOUDINARY_API_SECRET: string
