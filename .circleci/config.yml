@@ -9,7 +9,6 @@ jobs:
 
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -20,12 +19,27 @@ jobs:
 
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
 
       - save_cache:
           paths:
-            - node_modules
+            - ~/repo/node_modules
           key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
+  code_lint:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore node modules cache
+          keys:
+            # when package.lock changes, use increasingly general patterns to restore cache
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
+      - run: npm run lint
 
   release:
     docker:
@@ -36,21 +50,13 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Restore node modules cache
           keys:
+            # when package.lock changes, use increasingly general patterns to restore cache
             - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
       - run: npx semantic-release
-
-  code_lint:
-    docker:
-      - image: circleci/node:latest
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
-
-      - run: npm run lint
 
 workflows:
   version: 2
