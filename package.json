@@ -39,7 +39,7 @@
     "@semantic-release/github": "5.2.10",
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/bcryptjs": "2.4.2",
-    "@types/jsonwebtoken": "8.3.2",
+    "@types/jsonwebtoken": "8.3.3",
     "awesome-typescript-loader": "5.2.1",
     "babel-core": "6.26.3",
     "babel-plugin-module-resolver": "3.2.0",
