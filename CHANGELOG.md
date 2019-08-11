@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/Kandelborg/KATS/compare/v1.0.2...v1.0.3) (2019-08-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency graphql-shield to v6 ([#41](https://github.com/Kandelborg/KATS/issues/41)) ([b72e78c](https://github.com/Kandelborg/KATS/commit/b72e78c))
+
 ## [1.0.2](https://github.com/Kandelborg/KATS/compare/v1.0.1...v1.0.2) (2019-08-11)
 
 
