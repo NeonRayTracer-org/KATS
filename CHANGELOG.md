@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Kandelborg/KATS/compare/v1.0.1...v1.0.2) (2019-08-11)
+
+
+### Bug Fixes
+
+* **bcrypt:** use bryptjs instead of bcrypt to build properly in ci env ([4cd639c](https://github.com/Kandelborg/KATS/commit/4cd639c))
+
 ## [1.0.1](https://github.com/Kandelborg/KATS/compare/v1.0.0...v1.0.1) (2019-04-05)
 
 
