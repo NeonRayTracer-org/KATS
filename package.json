@@ -23,13 +23,13 @@
     "lint": "tslint -p tsconfig.json --config tslint.json && prettier-tslint fix \"src/**/*.ts*\""
   },
   "devDependencies": {
-    "@babel/cli": "7.4.3",
-    "@babel/core": "7.4.3",
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
     "@babel/plugin-external-helpers": "7.2.0",
-    "@babel/plugin-proposal-export-default-from": "7.2.0",
-    "@babel/plugin-transform-runtime": "7.4.3",
+    "@babel/plugin-proposal-export-default-from": "7.5.2",
+    "@babel/plugin-transform-runtime": "7.5.5",
     "@babel/plugin-transform-strict-mode": "7.2.0",
-    "@babel/preset-env": "7.4.3",
+    "@babel/preset-env": "7.5.5",
     "@babel/preset-typescript": "7.3.3",
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
