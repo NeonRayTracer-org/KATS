@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt'
+import * as bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 import { extendType, stringArg } from 'nexus'
 import { Context } from '../../../db-types'
