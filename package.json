@@ -55,7 +55,7 @@
     "pm2": "3.5.1",
     "prettier": "1.18.2",
     "prettier-tslint": "0.4.2",
-    "rimraf": "2.7.0",
+    "rimraf": "3.0.2",
     "semantic-release": "15.13.21",
     "terser-webpack-plugin": "1.4.1",
     "ts-loader": "6.0.4",
