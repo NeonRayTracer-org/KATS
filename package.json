@@ -74,7 +74,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cloudinary": "^1.14.0",
+    "cloudinary": "^2.0.0",
     "graphql": "^14.2",
     "graphql-shield": "^6.0.0",
     "graphql-yoga": "^1.18.1",
